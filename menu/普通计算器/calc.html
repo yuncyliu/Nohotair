@@ -82,6 +82,8 @@
         var result = resultDom.value;
         try {
             var r = eval(result);
+            r = r.toFixed(10);
+            r = parseFloat(r);
             resultDom.value = r;
           } catch (err) {
             resultDom.value = "错误：" + err.message;

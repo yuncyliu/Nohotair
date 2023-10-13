@@ -1,5 +1,5 @@
 function getresult() {
-    var Waist, Hip,chest,shoulder;
+    var Waist, Hip,chest,shoulder,maxelement;
 
     Waist = document.getElementById('Waist').value;
     Hip = document.getElementById('Hip').value;
@@ -9,58 +9,82 @@ function getresult() {
     var  WHR= Waist/Hip;
     WHR=WHR.toFixed(2);
 
-    if(shoulder >= Hip && shoulder >= chest)
+    if(!shoulder || !Hip || !chest || !Waist)
     {
-        if(shoulder = Hip)
-        {
-            if(WHR <0.85)
-            {
-                document.getElementById('result').innerHTML = "您的体型为:X型(沙漏型/标准型)";
-            }else{
-                document.getElementById('result').innerHTML = "您的体型为:H型(矩型)";
-            }
-        }else{
-            document.getElementById('result').innerHTML = "您的体型为:T型(草莓型)";
-        }
-    }
-    else if(Hip >= shoulder && Hip >= chest)
-    {
-        if(shoulder < Hip)
-        {
-            if(WHR < 1)
-            {
-                document.getElementById('result').innerHTML = "您的体型为:A型(梨形)";
-            }else{
-                document.getElementById('result').innerHTML = "您的体型为:O型(苹果型)";
-            }
-        }else{
-            if(WHR < 0.85)
-            {
-                document.getElementById('result').innerHTML = "您的体型为:X型(沙漏型/标准型)";
-            }else{
-                document.getElementById('result').innerHTML = "您的体型为:H型(矩型)";
-            }
-        }
+        document.getElementById('result').innerHTML = "请输入完整数值后再进行体型判断";
     }
     else{
-        if(shoulder = Hip)
+        if(shoulder >= Hip && shoulder >= chest)
         {
-            if(WHR < 0.85)
+            if(shoulder = Hip)
             {
-                document.getElementById('result').innerHTML = "您的体型为:X型(沙漏型/标准型)";
+                if(WHR <0.85)
+                {
+                    document.getElementById('result').innerHTML = "您的体型为:X";
+                }
+                else if(0.85 <= WHR < 1){
+                    document.getElementById('result').innerHTML = "您的体型为:H";
+                }
+                else{
+                    document.getElementById('result').innerHTML = "未找到匹配体型";
+                }
             }else{
-                document.getElementById('result').innerHTML = "您的体型为:T型(草莓型)";
+                document.getElementById('result').innerHTML = "您的体型为:Y";
             }
         }
-        else if(shoulder > Hip)
+        else if(Hip >= shoulder && Hip >= chest)
         {
-            if(WHR < 1){
-                document.getElementById('result').innerHTML = "您的体型为:T型(草莓型)";
+            if(shoulder < Hip)
+            {
+                if(WHR < 1)
+                {
+                    document.getElementById('result').innerHTML = "您的体型为:A";
+                }else{
+                    document.getElementById('result').innerHTML = "您的体型为:O";
+                }
+            }else{
+                if(WHR < 0.85)
+                {
+                    document.getElementById('result').innerHTML = "您的体型为:X";
+                }
+                else if(0.85 <= WHR < 1)
+                {
+                    document.getElementById('result').innerHTML = "您的体型为:H";
+                }
+                else{
+                    document.getElementById('result').innerHTML = "未找到匹配体型";
+                }
             }
         }
-        else{
-            if(WHR < 0.85){
-                document.getElementById('result').innerHTML = "您的体型为:X型(沙漏型/标准型)";
+        else if(chest >= shoulder && chest >= Hip){
+            if(shoulder = Hip)
+            {
+                if(WHR < 0.85)
+                {
+                    document.getElementById('result').innerHTML = "您的体型为:X";
+                }else if(0.85 <= WHR < 1){
+                    document.getElementById('result').innerHTML = "您的体型为:Y";
+                }
+                else{
+                    document.getElementById('result').innerHTML = "未找到匹配体型";
+                }
+            }
+            else if(shoulder > Hip)
+            {
+                if(WHR < 1){
+                    document.getElementById('result').innerHTML = "您的体型为:Y";
+                }
+                else{
+                    document.getElementById('result').innerHTML = "未找到匹配体型";
+                }
+            }
+            else if(shoulder < Hip){
+                if(WHR < 0.85){
+                    document.getElementById('result').innerHTML = "您的体型为:X";
+                }
+                else{
+                    document.getElementById('result').innerHTML = "未找到匹配体型";
+                }
             }
         }
     }
