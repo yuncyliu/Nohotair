@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主页面</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card" data-tilt>
+            <div class="content">
+                <h2>01</h2>
+                <h3>普通计算器</h3>
+                <a href="../普通计算器/calc.html">点击进入</a>
+            </div>
+        </div>
+        <div class="card" data-tilt>
+            <div class="content">
+                <h2>02</h2>
+                <h3>健康氢计算</h3>
+                <a href="../index.html">点击进入</a> 
+            </div>
+    </div>
+    <!-- 引用js库:vanilla-tilt（一个平滑的 3D 倾斜库） -->
+    <script type="text/javascript" src="./vanilla-tilt.js"></script>
+    <script>
+        <!-- 获取card -->
+        VanillaTilt.init(document.querySelectorAll(".card"),{
+            max: 15,
+            speed: 400,
+            glare: true,
+            "max-glare": 1 
+        }
+        );
+    </script>
+</body>
+</html>

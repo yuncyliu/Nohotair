@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>腰臀比计算器</title>
+        <link rel="stylesheet" href="./腰臀比.css">
+        <link rel="stylesheet" href="../导航栏.css">
+    </head>
+    <body>
+        <div class="Main">
+            <div class="Heading">腰臀比计算器</div>
+            <div>
+                <label>腰围(cm)</label><br />
+                <input type="number" placeholder="请输入腰围(cm)" id='Waist' class="field" />
+            </div>
+            <div>
+                <label>臀围(cm)</label><br />
+                <input type="number" placeholder="请输入臀围(cm)" id='Hip' class="field" />
+            </div>
+            <div>
+                <label>性别</label><br />
+                <input placeholder="男为1女为0" id='personSex' class="field" />
+            </div>
+            <div id='result'></div>
+            <button class="button" onclick="getWHR()" data-toggle="tooltip" title="女性理想的腰臀比为0.7及以下，男性则为0.9及以下。
+            超过这个范围可能表示脂肪分布不均匀，
+            会增加患心血管疾病、糖尿病等疾病的风险">点击计算腰臀比</button>
+        </div>
+        <div class="navbar">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <ul>
+                <li><a href="../../主页面/main.html"><img src="../../主页面/主页.jpg" alt="返回主页"></a></li>
+                <li><a href="../BMI/BMI.html">BMI</a></li>
+                <li><a href="../BMR/BMR.html">BMR</a></li>
+                <li><a href="../体脂率/体脂率.html">体脂率</a></li>
+                <li><a href="../每日能量需求/每日能量需求.html">每日能量需求</a></li>
+                <li><a href="../每日饮水量/每日饮水量.html">每日饮水量</a></li>
+                <li><a href="../目标心率/目标心率.html">目标心率</a></li>
+                <li><a href="../腰臀比/腰臀比.html">腰臀比</a></li>
+                <li><a href="../体型判断/体型判断.html">体型判断</a></li>
+                <li><a href="../单位转换器/单位转换器.html">单位转换器</a></li>
+                <li><a href="../一次最大重量/一次最大重量.html">一次最大重量</a></li>
+            </ul>
+        </div>
+        <script src="./腰臀比.js"></script>
+    </body>
+</html>

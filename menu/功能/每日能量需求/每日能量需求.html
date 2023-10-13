@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <title>每日能量需求计算器</title>
+        <link rel="stylesheet" href="./每日能量需求.css">
+        <link rel="stylesheet" href="../导航栏.css">
+    </head>
+    <body>
+        <div class="Main">
+            <div class="Heading" data-toggle="tooltip" title="每日能量需求是指一个人在一天中所消耗的总能量">每日能量需求<br/>计算器</div>
+            <div>
+				<label>身高(cm)</label><br />
+				<input placeholder="请输入身高(cm)" id='Height' class="field" />
+			</div>
+			<div>
+				<label>体重(kg)</label><br />
+				<input type="number" placeholder="请输入体重(kg)" id='Weight' class="field" />
+			</div>
+			<div>
+				<label>年龄</label><br />
+				<input type="number" placeholder="请输入年龄" id='Age' class="field" />
+			</div>
+			<div>
+				<label>性别</label><br />
+				<input placeholder="男为1女为0" id='personSex' class="field" />
+			</div>
+            <div>
+                <label>请选择你的运动强度</label><br/>
+                <select name="optionsList" id="activityLevel">
+                    <option selected disabled>请选择</option>
+                    <option value="1.2" class="option">久坐办公室工作、没有或很少运动</option>
+                    <option value="1.375" class="option">轻度运动(每周1-3次)</option>
+                    <option value="1.55" class="option">中度运动(每周3-5次)</option>
+                    <option value="1.725" class="option">重度运动(每周6-7次)</option>
+                    <option value="1.9" class="option">专业运动员强度</option>
+                </select>
+            </div>
+            <div id='result'></div>
+            <button class="button" onclick="getTDEE()">计算每日能量需求</button>
+        </div>
+        <div class="navbar">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <ul>
+                <li><a href="../../主页面/main.html"><img src="../../主页面/主页.jpg" alt="返回主页"></a></li>
+                <li><a href="../BMI/BMI.html">BMI</a></li>
+                <li><a href="../BMR/BMR.html">BMR</a></li>
+                <li><a href="../体脂率/体脂率.html">体脂率</a></li>
+                <li><a href="../每日能量需求/每日能量需求.html">每日能量需求</a></li>
+                <li><a href="../每日饮水量/每日饮水量.html">每日饮水量</a></li>
+                <li><a href="../目标心率/目标心率.html">目标心率</a></li>
+                <li><a href="../腰臀比/腰臀比.html">腰臀比</a></li>
+                <li><a href="../体型判断/体型判断.html">体型判断</a></li>
+                <li><a href="../单位转换器/单位转换器.html">单位转换器</a></li>
+                <li><a href="../一次最大重量/一次最大重量.html">一次最大重量</a></li>
+            </ul>
+        </div>
+        <script src="./每日能量需求.js"></script>
+    </body>
+</html>

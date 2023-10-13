@@ -1,0 +1,104 @@
+<html>
+ <head>
+    <title>普通计算器</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="calc.css">
+    <link rel="stylesheet" href="./返回主页面.css">
+ </head>
+
+<body>
+    <div id="cac">
+        <div class="navbar">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <ul>
+                <li><a href="../主页面/main.html"><img src="../主页面/主页.jpg" alt="返回主页"></a></li>
+            </ul>
+        </div>
+        <h2 style="text-align:center;font-size:20px;font-weight:bold;color:black">四则计算器</h2>
+        <div class="c_show">
+            <input type="text" class="s_text" onfocus="this.blur();" value="0" id="result">
+        </div>
+        <div class="c_key">
+            <ul>
+                <li onclick="command(7);">7</li>
+                <li onclick="command(8);">8</li>
+                <li onclick="command(9);":>9</li>
+                <li class="c_tool" onclick="del('j')">←</li>
+                <li class="c_tool" onclick="clearzero('j')">c</li>
+
+                <li onclick="command(4);">4</li>
+                <li onclick="command(5);">5</li>
+                <li onclick="command(6);">6</li>
+                <li class="c_tool" onclick="tools('*','g')">×</li>
+                <li class="c_tool" onclick="tools('/','g')">÷</li>
+
+                <li onclick="command(1);">1</li>
+                <li onclick="command(2);">2</li>
+                <li onclick="command(3);">3</li>
+                <li class="c_tool" onclick="tools('+','g');">+</li>
+                <li class="c_tool" onclick="tools('-','g');">-</li>
+                <li onclick="command(0);">0</li>
+                <li onclick="command(0);">00</li>
+                <li onclick="dot('.')">.</li>
+                <li class="c_tool" onclick="tools('%','g');">%</li>
+                <li class="c_result" onclick="equal('j');">=</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    //获取一下id 
+    var resultDom = document.getElementById("result");
+    //点击计算器执行函数
+    function command(num)
+    {  
+        var str = resultDom.value;
+        str = (str == "0" ? "":str);
+        str += num;
+        resultDom.value = str;
+    }
+    function dot(p)
+    {
+        var num = resultDom.value;
+        //num = (num == "0" ? "":num);
+        resultDom.value = num + p;
+    }
+    function tools(p,m)
+    {
+        operate = true;    
+        if(operate)
+        {    
+            var num = resultDom.value;
+            num = (num == "0" ? "":num);
+            resultDom.value = num + p;
+            operate = false;
+        }
+    }
+    function equal(m)
+    {  
+        var result = resultDom.value;
+        try {
+            var r = eval(result);
+            resultDom.value = r;
+          } catch (err) {
+            resultDom.value = "错误：" + err.message;
+          }
+    }
+    function clearzero()
+    {   
+        resultDom.value=0;
+
+    }
+	function del(m)
+	{
+        var str = resultDom.value;
+
+        str = str.substring(0,str.length - 1);
+        str = (str == "" ? 0 : str);
+
+        resultDom.value = str;
+	}
+</script>   

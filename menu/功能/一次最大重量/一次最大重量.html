@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <title>1RM计算器</title>
+        <link rel="stylesheet" href="./一次最大重量.css">
+        <link rel="stylesheet" href="../导航栏.css">
+    </head>
+    <body>
+        <div class="Main">
+            <div class="Heading" data-toggle="tooltip" title="1RM指的是在保持动作标准的情况下只能举/蹲/推起一次的重量">1RM<br/>计算器</div>
+            <div>
+                <label>最大重量(Kg)</label><br />
+                <input type="number" placeholder="请输入你能举起的最大重量" id='MaxWeight' class="field" />
+            </div>
+            <div>
+                <label>重复次数</label><br />
+                <input type="number" placeholder="请输入重复次数" id='renumber' class="field" />
+            </div>
+            <div id='result'></div>
+            <button class="button" onclick="get1RM()">计算一次最大重量</button>
+        </div>
+        <div class="navbar">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <ul>
+                <li><a href="../../主页面/main.html"><img src="../../主页面/主页.jpg" alt="返回主页"></a></li>
+                <li><a href="../BMI/BMI.html">BMI</a></li>
+                <li><a href="../BMR/BMR.html">BMR</a></li>
+                <li><a href="../体脂率/体脂率.html">体脂率</a></li>
+                <li><a href="../每日能量需求/每日能量需求.html">每日能量需求</a></li>
+                <li><a href="../每日饮水量/每日饮水量.html">每日饮水量</a></li>
+                <li><a href="../目标心率/目标心率.html">目标心率</a></li>
+                <li><a href="../腰臀比/腰臀比.html">腰臀比</a></li>
+                <li><a href="../体型判断/体型判断.html">体型判断</a></li>
+                <li><a href="../单位转换器/单位转换器.html">单位转换器</a></li>
+                <li><a href="../一次最大重量/一次最大重量.html">一次最大重量</a></li>
+            </ul>
+        </div>
+        <script src="./一次最大重量.js"></script>
+    </body>
+</html>

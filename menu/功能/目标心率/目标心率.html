@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>目标心率计算器</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./目标心率.css">
+        <link rel="stylesheet" href="../导航栏.css">
+    </head>
+    <body>
+        <div class="Main">
+            <div class="Heading">目标心率计算器</div>
+            <div>
+                <label>年龄</label><br />
+                <input type="number"  id='age' class="field" />
+            </div>
+            <div>
+                <label>静息心率</label><br />
+                <input type="number"  id='RHR' class="field" />
+            </div>
+            <div>
+                <label>运动强度</label><br />
+                <select name="strengthlist" id="strength">
+                    <option selected disabled>请选择</option>
+                    <option value="0.5">低强度运动</option>
+                    <option value="0.6">增强心肺+燃脂</option>
+                    <option value="0.7">有氧耐力训练</option>
+                    <option value="0.8">无氧耐力训练</option>
+                    <option value="0.9">无氧爆发训练</option>
+                </select>
+            </div>
+            <div id='result'></div>
+            <button class="button" onclick="getTHR()">点击计算目标心率区间</button>
+        </div>
+        <div class="navbar">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <ul>
+                <li><a href="../../主页面/main.html"><img src="../../主页面/主页.jpg" alt="返回主页"></a></li>
+                <li><a href="../BMI/BMI.html">BMI</a></li>
+                <li><a href="../BMR/BMR.html">BMR</a></li>
+                <li><a href="../体脂率/体脂率.html">体脂率</a></li>
+                <li><a href="../每日能量需求/每日能量需求.html">每日能量需求</a></li>
+                <li><a href="../每日饮水量/每日饮水量.html">每日饮水量</a></li>
+                <li><a href="../目标心率/目标心率.html">目标心率</a></li>
+                <li><a href="../腰臀比/腰臀比.html">腰臀比</a></li>
+                <li><a href="../体型判断/体型判断.html">体型判断</a></li>
+                <li><a href="../单位转换器/单位转换器.html">单位转换器</a></li>
+                <li><a href="../一次最大重量/一次最大重量.html">一次最大重量</a></li>
+            </ul>
+        </div>
+        <script src="./目标心率.js"></script>
+    </body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>了解更多</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        body{
+            background-color: black;
+        }
+        .shell
+        {
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            overflow: hidden;
+        }
+        .page
+        {
+            transform: translateX(-110%);
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            transform: 0.5s;
+            background-size: cover;
+        }
+        .button
+        {
+            display: block;
+            width: 8%;
+            color: #fff;
+            font-size: 22px;
+            border-bottom: #fff solid 4px;
+            text-align: center;
+            position: absolute;
+            bottom: 10px;
+            margin: 50px;
+            left: calc(50% + (var(--i)*12%));
+            z-index: 999;
+            transition: 0.3s;
+        }
+        .page_content
+        {
+            box-sizing: border-box;
+            height: 100%;
+            padding: 50px;
+            color: #fff;
+            position: absolute;
+            left: 100%;
+            display: none;
+            animation-name: fade;
+            animation-duration: 0.7s;
+            animation-iteration-count: 1;
+            opacity: 1;
+        }
+        @keyframes fade
+        {
+            0%{
+                opacity: 0;
+            }
+            50%{
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100%{
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+        input
+        {
+            display: none;
+        }
+        input:checked+.page
+        {
+            transform: translateX(0px);
+            transition: 0.4s;
+        }
+        input:checked+.page .page_content
+        {
+            width: 100%;
+            display: block;
+        }
+        .page:nth-child(3)
+        {
+            background-image: url('./pink.jpg');
+        }
+        .page:nth-child(3) .page_content
+        {
+            background-color: #ffbdb1
+        }
+
+        .page:nth-child(6)
+        {
+            background-image: url('./green.jpg');
+        }
+        .page:nth-child(6) .page_content
+        {
+            background-color: #bfe0d5
+        }
+
+        .page:nth-child(9)
+        {
+            background-image: url('./yellow.jpg');
+        }
+        .page:nth-child(9) .page_content
+        {
+            background-color: #efcc88
+        }
+        .page h1
+        {
+            font-size: 50px;
+        }
+        .page p
+        {
+            font-size: 30px;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        .page span
+        {
+            font-size: 20px;
+            letter-spacing: 3px;
+            color: rgb(56,56,56);
+        }
+        label:hover
+        {
+            cursor: pointer;
+            border-bottom: solid 4px rgb(35,35,35);
+        }
+        a{
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="shell">
+        <label for="button1" class="button" style="--i:0">身体维度</label>
+        <input type="radio" id="button1" name="page" checked>
+        <div class="page">
+            <div class="page_content">
+                <h1>身体维度测量方法</h1>
+                <p>如何测量肩围、胸围、腰围、臀围？</p>
+                <span>①肩围：身体直立，肩膀最宽位置量取一周<br/>
+                    ②胸围：身体直立，从腋下经过背部至前胸凸起点量取一周<br/>
+                    ③腰围：身体直立，腰部最细的地方量取一周<br/>
+                    ④臀围：身体直立，臀部最宽处，垂直围绕一圈得到臀围尺寸</span>
+            </div>
+        </div>
+        <label for="button2" class="button" style="--i:1">目标心率</label>
+        <input type="radio" id="button2" name="page" >
+        <div class="page">
+            <div class="page_content">
+                <h1>目标心率</h1>
+                <p>在目标心率区间内运动有助于控制运动强度、脂肪燃烧和有氧训练效果。</p>
+                <span>①目标心率是指运动时达到合理运动强度时的心率，一般最大安全心率的百分比（通常介于50%-85%之间），在此区间活动时，相对安全且能获得心血管活动的最大收益。<br/>
+                    ②储备心率（Heart Reserve Rate）表示人体在劳动或运动时心率可能增加的潜在能力</span>
+            </div>
+        </div>
+
+        <label for="button3" class="button" style="--i:2">1RM</label>
+        <input type="radio" id="button3" name="page" >
+        <div class="page">
+            <div class="page_content">
+                <h1>一次最大重量</h1>
+                <p>为什么要关心1RM？</p>
+                <span>①1RM指的是在保持动作标准的情况下只能举/蹲/推起一次的重量（比如一名运动员卧推最重能举起200Kg,且只能举起一次，其1RM=200Kg,如果一名运动员卧推最重能举起60Kg,且能举起6次，其6RM=60Kg）<br/>
+                    ②计算一次最大重量可以帮助用户了解自己在特定训练项目中的极限能力，为制定个性化的训练计划提供参考依据，同时也是了解你现在有多强壮的最好方法。</span>
+            </div>
+        </div>
+        <label for="button4" class="button" style="--i:3"><a href="../index.html">返回</a></label>
+    </div>
+</body>
+</html>
